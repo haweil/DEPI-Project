@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-2xl font-semibold leading-tight text-gray-800 animate-fade-in">
             {{ $editing ? 'Edit Quiz' : 'Create Quiz' }}
         </h2>
     </x-slot>
@@ -11,34 +11,30 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+            <div class="bg-white overflow-hidden shadow-lg sm:rounded-lg transition duration-500 ease-in-out transform hover:shadow-2xl">
+                <div class="p-6 text-gray-900 animate-slide-in">
                     <form wire:submit.prevent="save">
                         <div>
                             <x-input-label for="title" value="Title" />
-                            <x-text-input wire:model="quiz.title" id="title" class="block mt-1 w-full" type="text"
-                                name="title" required />
+                            <x-text-input wire:model="quiz.title" id="title" class="block mt-1 w-full border-2 border-gray-300 focus:outline-none focus:ring focus:ring-blue-500" type="text" name="title" required />
                             <x-input-error :messages="$errors->get('quiz.title')" class="mt-2" />
                         </div>
 
                         <div class="mt-4">
                             <x-input-label for="slug" value="Slug" />
-                            <x-text-input wire:model="quiz.slug" id="slug" class="block mt-1 w-full" type="text"
-                                name="slug" disabled />
+                            <x-text-input wire:model="quiz.slug" id="slug" class="block mt-1 w-full border-2 border-gray-300 focus:outline-none focus:ring focus:ring-blue-500" type="text" name="slug" disabled />
                             <x-input-error :messages="$errors->get('quiz.slug')" class="mt-2" />
                         </div>
 
                         <div class="mt-4">
                             <x-input-label for="description" value="Description" />
-                            <x-textarea wire:model="quiz.description" id="description" class="block mt-1 w-full"
-                                type="text" name="description" />
+                            <x-textarea wire:model="quiz.description" id="description" class="block mt-1 w-full border-2 border-gray-300 focus:outline-none focus:ring focus:ring-blue-500" name="description" />
                             <x-input-error :messages="$errors->get('quiz.description')" class="mt-2" />
                         </div>
 
                         <div class="mt-4">
                             <x-input-label for="questions" value="Questions" />
-                            <x-select-list class="w-full" id="questions" name="questions" :options="$this->listsForFields['questions']"
-                                wire:model="questions" multiple />
+                            <x-select-list class="w-full" id="questions" name="questions" :options="$this->listsForFields['questions']" wire:model="questions" multiple />
                             <x-input-error :messages="$errors->get('questions')" class="mt-2" />
                         </div>
 
@@ -59,7 +55,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-primary-button>
+                            <x-primary-button class="bg-blue-600 hover:bg-blue-500 transition duration-200 ease-in-out">
                                 Save
                             </x-primary-button>
                         </div>

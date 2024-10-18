@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
+        <h2 class="text-2xl font-semibold leading-tight text-gray-800 animate-fade-in">
             Questions
         </h2>
     </x-slot>
@@ -11,57 +11,58 @@
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
+            <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg transition duration-500 ease-in-out transform hover:shadow-2xl hover:scale-105">
+                <div class="p-6 text-gray-900 animate-slide-in">
                     <div class="mb-4">
                         <a href="{{ route('question.create') }}"
-                            class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white hover:bg-gray-700">
+                            class="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white hover:bg-blue-500 transition-transform transform hover:scale-105">
                             Create Question
                         </a>
                     </div>
 
                     <div class="mb-4 min-w-full overflow-hidden overflow-x-auto align-middle sm:rounded-md">
-                        <table class="min-w-full border divide-y divide-gray-200">
+                        <table class="min-w-full divide-y divide-gray-200 border">
                             <thead>
                                 <tr>
                                     <th class="w-16 bg-gray-50 px-6 py-3 text-left">
-                                        <span
-                                            class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">ID</span>
+                                        <span class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">
+                                            ID
+                                        </span>
                                     </th>
                                     <th class="bg-gray-50 px-6 py-3 text-left">
-                                        <span
-                                            class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">Text</span>
+                                        <span class="text-xs font-medium uppercase leading-4 tracking-wider text-gray-500">
+                                            Text
+                                        </span>
                                     </th>
                                     <th class="w-40 bg-gray-50 px-6 py-3 text-left">
-
+                                        <!-- Actions -->
                                     </th>
                                 </tr>
                             </thead>
 
-                            <tbody class="bg-white divide-y divide-gray-200 divide-solid">
+                            <tbody class="divide-y divide-gray-200 bg-white">
                                 @forelse($questions as $question)
-                                    <tr class="bg-white">
+                                    <tr class="transition ease-in-out hover:bg-gray-100">
                                         <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                             {{ $question->id }}
                                         </td>
                                         <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                             {{ $question->text }}
                                         </td>
-                                        <td>
+                                        <td class="flex space-x-2 items-center px-6 py-4">
                                             <a href="{{ route('question.edit', $question->id) }}"
-                                                class="inline-flex items-center rounded-md border border-transparent bg-gray-800 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white hover:bg-gray-700">
+                                                class="inline-flex items-center rounded-md bg-blue-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white hover:bg-blue-500 transition-transform transform hover:scale-105">
                                                 Edit
                                             </a>
                                             <button wire:click="delete({{ $question }})"
-                                                class="rounded-md border border-transparent bg-red-200 px-4 py-2 text-xs uppercase text-red-500 hover:bg-red-300 hover:text-red-700">
+                                                class="rounded-md bg-red-200 px-4 py-2 text-xs uppercase text-red-500 hover:bg-red-300 transition-transform transform hover:scale-105">
                                                 Delete
                                             </button>
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="3"
-                                            class="px-6 py-4 text-center leading-5 text-gray-900 whitespace-no-wrap">
+                                        <td colspan="3" class="px-6 py-4 text-center text-gray-900">
                                             No questions were found.
                                         </td>
                                     </tr>
@@ -70,7 +71,10 @@
                         </table>
                     </div>
 
-                    {{ $questions->links() }}
+                    <!-- Pagination Links -->
+                    <div class="mt-4">
+                        {{ $questions->links() }}
+                    </div>
                 </div>
             </div>
         </div>

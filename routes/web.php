@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 // public routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('quiz/{quiz}', [HomeController::class, 'show'])->name('quiz.show');
+
 Route::get('results/{test}', [ResultController::class, 'show'])->name('results.show');
 // protected routes
 Route::middleware('auth')->group(function () {
