@@ -1,16 +1,8 @@
-# Laravel Quiz System
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 ## Overview
 
 This quiz system allows users to participate in quizzes, view their results, and compete on leaderboards.
-
-## Database Schema
-
-![image](https://github.com/kareemaladawy/laravel-quiz-system/assets/62149929/0f00b4e8-74b5-45e3-852c-d1980122e13e)
 
 ## Features
 
@@ -32,19 +24,12 @@ This quiz system allows users to participate in quizzes, view their results, and
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-#### Prerequisites
-
--   Composer dependency manager
--   PHP 8+
--   Laravel 10.18+
--   Livewire 3
-
 #### Installation
 
 1- Clone the project
 
 ```
-git clone https://github.com/kareemaladawy/laravel.git
+git clone https://github.com/haweil/DEPI-Project.git
 ```
 
 2- Install the dependencies
@@ -84,15 +69,4 @@ To run tests, run the following command
 ```
   php artisan test
 ```
-## Screenshots
 
-<a href="https://github.com/kareemaladawy/laravel-quiz-system/issues/1">Admin Screenshots</a> <br>
-<a href="https://github.com/kareemaladawy/laravel-quiz-system/issues/2">User Screenshots</a>
-
-## Authors
-
--   [@kareemalaadwy](https://www.github.com/kareemalaadwy)
-
-## Contributing
-
-Contributions are always welcome!
