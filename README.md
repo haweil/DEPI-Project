@@ -1,9 +1,7 @@
 
 
 ## Overview
-
-This quiz system allows users to participate in quizzes, view their results, and compete on leaderboards.
-
+This Online Quiz System allows users to participate in quizzes on various topics, track their scores, and compete on leaderboards. It is designed to provide a seamless experience for both users and administrators, featuring dynamic quiz creation, user management, and real-time score tracking.
 ## Features
 
 #### Admin Features
