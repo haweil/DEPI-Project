@@ -28,6 +28,10 @@ class Quiz extends Model
         return 'slug';
     }
 
+    public function test()
+    {
+        return $this->hasOne(Test::class);
+    }
     public function questions()
     {
         return $this->belongsToMany(Question::class);

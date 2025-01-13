@@ -9,7 +9,7 @@
     @if (isset($title))
         <title>{{ $title }}</title>
     @else
-        <title>Quiz System</title>
+        <title>Quiz_4st Football Group</title>
     @endif
 
     <!-- Fonts -->
@@ -45,5 +45,16 @@
     @livewireScripts
     @stack('scripts')
 </body>
-
+<footer>
+    <div class="container mx-auto flex flex-col items-center justify-center">
+      <div class="flex items-center space-x-3">
+        <p class="text-center text-sm">
+          Copyright &copy; 2025, made by
+          <a href="https://github.com/haweil" target="_blank" class="text-blue-400 hover:underline font-semibold">
+            Mohamed Haweil
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </html>
